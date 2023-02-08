@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Логин{% endblock %}
+{% block content %}
+    <h1>Log-in</h1>
+    <p>Войдите в свой аккаунт, если у вас его нет вы можете создать его <a href="{% url "register" %}"> здесь </a>
+    <form action="." method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Log-in"></p>
+    </form>
+{% endblock %}
